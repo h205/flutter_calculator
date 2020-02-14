@@ -7,7 +7,13 @@ void main() => runApp(
     debugShowCheckedModeBanner: false,
     home:Scaffold(
       appBar: AppBar(
-        title: Text("Calculator")
+        backgroundColor: Colors.blueGrey[100],
+        title: Text("Calculator", 
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 30
+        ),//TextStyle
+        )//text
       ),//appBar
     
     body: Mycal()
