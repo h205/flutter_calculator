@@ -1,5 +1,7 @@
 //import 'dart:html';
 
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(
@@ -7,7 +9,7 @@ void main() => runApp(
     debugShowCheckedModeBanner: false,
     home:Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey[100],
+        backgroundColor: Color.fromRGBO(204,238,247, 1),
         title: Text("Calculator", 
         style: TextStyle(
           color: Colors.black,
@@ -83,75 +85,38 @@ class _Calculator extends State<Calculator>{
            Row(
             
              children: <Widget>[
-               Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("C", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
+             button('C', Color.fromRGBO(204,238,247, 1),1),
+             button('+/-', Color.fromRGBO(204,238,247, 1),1),
+             button('%', Color.fromRGBO(204,238,247, 1),1),
+             button('/', Color.fromRGBO(204,78,0, 1),1)
+              
+             ], //<Widget>[]
 
-                )//TextStyle
-                 ), //text
-                 color: Colors.blueGrey[100],
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
 
-               ),//Container
-       Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("+/-", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
+           ),//Row
+            Row(
+            
+             children: <Widget>[
+               
+             button('7', Color.fromRGBO(108,113,113, 1),1),
+             button('8', Color.fromRGBO(108,113,113, 1),1),
+             button('9', Color.fromRGBO(108,113,113, 1),1),
+             button('x', Color.fromRGBO(204,78,0, 1),1)
+              
+               
+             ], //<Widget>[]
 
-                )//TextStyle
-                 ), //text
-                 color: Colors.blueGrey[100],
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
 
-               ),//Container
-             
-                  Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("%", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.blueGrey[100],
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-              Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("/", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.yellow,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
+           ),//Row
+            Row(
+            
+             children: <Widget>[
+               
+             button('4', Color.fromRGBO(108,113,113, 1),1),
+             button('5', Color.fromRGBO(108,113,113, 1),1),
+             button('6', Color.fromRGBO(108,113,113, 1),1),
+             button('-', Color.fromRGBO(204,78,0, 1),1)
+           
             
                
              ], //<Widget>[]
@@ -161,231 +126,14 @@ class _Calculator extends State<Calculator>{
             Row(
             
              children: <Widget>[
-               Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("7", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-       Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("8", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-             
-                  Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("9", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-              Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("*", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.yellow,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-            
                
-             ], //<Widget>[]
-
-
-           ),//Row
-            Row(
-            
-             children: <Widget>[
-               Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("4", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-       Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("5", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
+             button('1', Color.fromRGBO(108,113,113, 1),1),
+             button('2', Color.fromRGBO(108,113,113, 1),1),
+             button('3', Color.fromRGBO(108,113,113, 1),1),
+             button('+', Color.fromRGBO(204,78,0, 1),1)
              
-                  Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("6", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-              Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("-", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.yellow,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-            
-               
-             ], //<Widget>[]
-
-
-           ),//Row
-            Row(
-            
-             children: <Widget>[
-               Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("1", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-       Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("2", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-             
-                  Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("3", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-              Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("+", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.yellow,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
+                 
+              
             
                
              ], //<Widget>[]
@@ -395,59 +143,10 @@ class _Calculator extends State<Calculator>{
            Row(
             
              children: <Widget>[
-               Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("0", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.only(left: 80 , top: 20,bottom: 20 ,right: 80),
-                 shape: StadiumBorder(),
-               ),//RaisedButton
-
-               ),//Container
-       Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text(".", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.grey,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
              
-                  Container(
-                 padding: EdgeInsets.only(bottom: 10) ,
-                 child: RaisedButton(
-                 onPressed: (){},
-                child: 
-                Text("=", style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30
-
-                )//TextStyle
-                 ), //text
-                 color: Colors.yellow,
-                 padding: EdgeInsets.all(20),
-                 shape: CircleBorder(),
-               ),//RaisedButton
-
-               ),//Container
-             
+             button('0', Color.fromRGBO(108,113,113, 1),0),
+             button('.', Color.fromRGBO(108,113,113, 1),1),
+             button('=', Color.fromRGBO(204,78,0, 1),1)
               
             
                
@@ -461,4 +160,55 @@ class _Calculator extends State<Calculator>{
     );//Container
   }
 
-}
+  Widget button (String btntxt , Color color , int num1) {
+    Container  container;
+    if(num1==0){
+     container= Container(
+                 padding: EdgeInsets.only(bottom: 10) ,
+                 child: RaisedButton(
+                 onPressed: (){},
+                child: 
+                Text(btntxt, style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30
+
+                )//TextStyle
+                 ), //text
+                 color: color,
+                 padding: EdgeInsets.only(right: 80, left: 80, top: 20, bottom:20 ),
+                 shape: StadiumBorder(),
+               ),//RaisedButton
+
+               );//Container
+    }
+        else {
+         container=  Container(
+                 padding: EdgeInsets.only(bottom: 10) ,
+                 child: RaisedButton(
+                 onPressed: (){},
+                child: 
+                Text(btntxt, style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30
+
+                )//TextStyle
+                 ), //text
+                 color: color,
+                 padding: EdgeInsets.all(20),
+                 shape: CircleBorder(),
+               ),//RaisedButton
+
+               );//Container
+
+
+
+
+
+
+        }
+
+       return container;
+    }
+
+
+  }
