@@ -1,7 +1,5 @@
-//import 'dart:html';
 
-//import 'dart:html';
-
+//import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
@@ -43,7 +41,8 @@ class Calculator extends StatefulWidget{
 
 }
 
-class _Calculator extends State<Calculator>{
+class _Calculator extends State<Calculator>
+{
   
   String text ='0';
   double numone=0 ;
@@ -51,6 +50,11 @@ class _Calculator extends State<Calculator>{
    
   String res='0';
   String finalres='0'; 
+
+  String opr='0';
+  String preopr='0';
+
+ 
 
 
   @override
@@ -160,13 +164,18 @@ class _Calculator extends State<Calculator>{
     );//Container
   }
 
-  Widget button (String btntxt , Color color , int num1) {
+  Widget button (String btntxt , Color color , int num1) 
+  {
     Container  container;
     if(num1==0){
      container= Container(
                  padding: EdgeInsets.only(bottom: 10) ,
                  child: RaisedButton(
-                 onPressed: (){},
+                 onPressed: (){
+
+                   calculate(btntxt);
+
+                 },
                 child: 
                 Text(btntxt, style: TextStyle(
                   color: Colors.black,
@@ -185,7 +194,12 @@ class _Calculator extends State<Calculator>{
          container=  Container(
                  padding: EdgeInsets.only(bottom: 10) ,
                  child: RaisedButton(
-                 onPressed: (){},
+                 onPressed: (){
+                   
+                   calculate(btntxt);
+
+
+                 },
                 child: 
                 Text(btntxt, style: TextStyle(
                   color: Colors.black,
@@ -201,14 +215,159 @@ class _Calculator extends State<Calculator>{
                );//Container
 
 
-
-
-
-
         }
 
        return container;
     }
+    void calculate (btntxt)
+    {
+      if(btntxt=='C'){
+
+        text='';
+        numone=0;
+        numtwo=0;
+        res='';
+        finalres='';
+        opr='';
+        preopr='';
+
+      }
+      else if(opr=='=' && btntxt=='='){
+
+        switch(preopr){
+      
+       case '+':
+          finalres = add();
+          break;
+       case '-':
+           finalres= sub();
+          break;
+       case 'x':
+           finalres= mul();
+          break;
+       case '/':
+           finalres= div();
+          break;
+
+      }
+      }
+      else if(btntxt == '%' ){
+      
+         res=(numone/100).toString();
+         finalres=res;
+
+      }
+      else if(btntxt ==  '.'){
+
+         if(!res.contains('.')){
+           res+='.';
+           finalres=res;
+
+         }
+
+      }
+      else if(btntxt == '+/-'){
+
+       res.startsWith('-') ? res=res.substring(1) :  res = '-' + res;
+       finalres=res;
+
+      }
+      else if(btntxt=='+' || btntxt=='-' || btntxt=='x' || btntxt=='/' || btntxt=='=' ){
+       if(numone==0){
+         numone=double.parse(res);
+       }
+       else{
+         numtwo=double.parse(res);
+
+       }
+      switch(opr){
+      
+       case '+':
+          finalres = add();
+          break;
+       case '-':
+           finalres= sub();
+          break;
+       case 'x':
+           finalres= mul();
+          break;
+       case '/':
+           finalres= div();
+          break;
+
+
+       }
+       preopr=opr;
+       opr=btntxt;
+       res='';
+
+
+      }
+
+      else{
+        if(res=='0'){
+          res=btntxt;
+        }
+       else{
+        res+=btntxt;
+        finalres=res;
+       }
+      }
+      setState(() {
+        text=finalres;
+      });
+    }
+
+      String add(){
+
+      res=(numone + numtwo).toString();
+      numone=double.parse(res);
+      return decremove(res);
+         
+
+      }
+       String sub(){
+
+      res=(numone - numtwo).toString();
+      numone=double.parse(res);
+      return decremove(res);
+         
+
+      }
+       String mul(){
+
+      res=(numone * numtwo).toString();
+      numone=double.parse(res);
+      return decremove(res);
+         
+
+      }
+       String div(){
+
+      res=(numone / numtwo).toString();
+      numone=double.parse(res);
+      return decremove(res);
+         
+
+      }
+      String decremove (String _res){
+
+        if(_res.contains('.')){
+       
+       List<String> split =_res.split('.');
+       
+        if(!(int.parse(split[1]) > 0)){
+              
+              return split[0];
+        }
+
+        }
+        return _res;
+
+      }
+
+    
 
 
   }
+  
